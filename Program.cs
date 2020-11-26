@@ -13,8 +13,8 @@ namespace PerformanceTune
         {
             var randomPointGenerator = new RandomPointGenerator();
 
-            //var process = new SlowProcess(randomPointGenerator);
-            var process = new FastProcess(randomPointGenerator);
+            var process = new SlowProcess(randomPointGenerator);
+            //var process = new FastProcess(randomPointGenerator);
             TimeIt.For(() => { process.Do(50); });
         }
     }

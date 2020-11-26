@@ -22,17 +22,9 @@ namespace PerformanceTune
         {
             var sw = new Stopwatch();
             sw.Start();
-            try
-            {
-                action?.Invoke();
-                sw.Stop();
-                Console.WriteLine("Measured : {0}", sw.Elapsed);
-            }
-            catch (Exception e)
-            {
-                sw.Stop();
-                Console.WriteLine("Measured(Exception!) : {0}", sw.Elapsed);
-            }
+            action?.Invoke();
+            sw.Stop();
+            Console.WriteLine("Measured : {0}", sw.Elapsed);
         }
     }
 }
